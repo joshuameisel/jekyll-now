@@ -3,7 +3,7 @@ layout: post
 title: Generalized Spinning Table Ridde
 ---
 
-FiveThirtyEight posted this [spinning table riddle](https://fivethirtyeight.com/features/i-would-walk-500-miles-and-i-would-riddle-500-more/) for n = 4. I found a solution for all n where n is a power of 2, using what I thought was a pretty neat recursive trick that involves playing two smaller games at once.  I will demonstrate this,and show how FiveThirtyEight’s n = 4 solution exactly implements this recursive algorithm.  I will prove, on the other hand, that there is no solution for any n not a power of 2.
+FiveThirtyEight posted this [spinning table riddle](https://fivethirtyeight.com/features/i-would-walk-500-miles-and-i-would-riddle-500-more/) for n = 4 coins. I found a solution for all n where n is a power of 2, using what I thought was a pretty neat recursive trick that involves playing two smaller games at once.  I will demonstrate this,and show how FiveThirtyEight’s n = 4 solution exactly implements this recursive algorithm.  I will prove, on the other hand, that there is no solution for any n not a power of 2.
 
 ## Powers of 2
 
