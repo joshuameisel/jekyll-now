@@ -19,7 +19,7 @@ To solve *n* = 2 = 2<sup>1</sup> recursively, we need an *n* = 1 = 2<sup>1-1</su
 
 ## Growth rate
 
-The growth rate of number of steps is exponential. It's not hard to see that if the solution for *n* = 2<sup>*k*</sup> takes *n* steps, then the solution for *n* = 2<sup>*k*+1</sup> takes *N*(*N*+2) steps. From this, it can easily be shown the solution for *n* takes 2<sup>n</sup> - 1 steps.
+The growth rate of number of steps is exponential. It's not hard to see that if the solution for *n* = 2<sup>*k*</sup> takes *n* steps, then the solution for *n* = 2<sup>*k*+1</sup> takes *N*(*N*+2) steps. From this, it can easily be shown the solution for *n* takes 2<sup>*n*</sup> - 1 steps.
 
 ## Non-powers of 2
 
