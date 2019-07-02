@@ -3,61 +3,26 @@ layout: post
 title: Generalized Spinning Table Ridde
 ---
 
-FiveThirtyEight posted this ([spinning table riddle](https://fivethirtyeight.com/features/i-would-walk-500-miles-and-i-would-riddle-500-more/)) for n=4. I found a solution
-for all n where n is a power of 2, using what I thought was a pretty neat recursive
-trick that involves playing two smaller games at once. I will demonstrate this,
-and show how FiveThirtyEight’s n=4 solution exactly implements this recursive
-algorithm. I will prove, on the other hand, that there is no solution for any n
-not a power of 2.
+FiveThirtyEight posted this [spinning table riddle](https://fivethirtyeight.com/features/i-would-walk-500-miles-and-i-would-riddle-500-more/) for n = 4. I found a solutionfor all n where n is a power of 2, using what I thought was a pretty neat recursivetrick that involves playing two smaller games at once.  I will demonstrate this,and show how FiveThirtyEight’s n = 4 solution exactly implements this recursivealgorithm.  I will prove, on the other hand, that there is no solution for any nnot a power of 2.
 
 ## Powers of 2
 
-Suppose n=2<sup>k</sup>
-, and you have a solution for 2<sup>k-1</sup>
-. Life would be easy if
-every pair of opposite coins matched (either both heads or both tails). Then
-you could think of the matching pairs as single coins, and use the 2k−1
-solution,
-always flipping a coin with its pair.
-So, the problem is reduced to getting the pairs all matching. This turns out
-to also be a 2k−1
-spinning table problem! Think of matching pairs as being
-“heads” and mismatched pairs as being “tails.” “Flipping” a pair involves flipping one of the coins, as this “flips” whether or not the pair matches.
-At this point you may be saying to yourself, “Hell yeah! We just have to
-do the sequence to get all the pairs matching (M), and then the sequence to
-get all the matching pairs to heads (H).” And you’re mostly right, with one
-caveat. While M gets all the pairs matching at some point, it’s not necessarily
-at the end. So we actually have to do the H sequence in between every move in
-M. To wit, if M consists of flips m1, m2, . . ., mN , then the 2k
-solution would
-be Hm1Hm2H . . . HmN H. One final saving grace keeping everything kosher is
-that each of the flips in H leaves the M game unchanged, since pairs are always
-flipped together (they’re essentially non-flips in M).
-1
-2 Deriving the original solution from the generalized
-To solve the n=4 case, we need an n=2 solution. It’s not hard to figure out
-that M=(Flip 1,2; Flip 1; Flip 1,2) works, but I will show below how you could
-be lazy and find this recursively. In H, 1 and 3 form a pair as do 2 and 4, so
-coin 1 maps to {1, 3} and 2 to {2, 4}. Thus H=(Flip both pairs; Flip {1,3}; Flip
-both pairs). Then the solution is Hm1Hm2Hm3H=(H; Flip 1,2; H; Flip 1; H;
-Flip 1,2; H), which is exactly the solution provided by FiveThirtyEight.
-To solve n=2 in the same way, we need an n=1 solution. This is the base
-case, so sadly we will have to use our own ingenuity. M=(Flip 1) works, which
-translates to H=(Flip both). The solution is then HMH=(Flip both; Flip 1;
-Flip both).
-3 Growth rate
-The growth rate is exponential. It’s not hard to see that if the solution for
-n = 2k
-takes N steps, then the solution for n = 2k+1 takes m(m + 2) steps.
-From this, it can easily be shown the solution for n takes 2n − 1 steps.
-4 Non-powers of 2
-n is not a power of 2 if and only if it’s divisible by some odd m > 1. Then
-there are evenly spaced coins i1, i2, . . . , im. There is no solution because if you
-start in a configuration where i1, . . . , ım are not homogeneous (not all heads or
-all tails), there is no guarantee you will ever escape this state.
-To see this, consider a choice of flips. You could luck out and flip exactly
-the heads or exactly the tails in i1, . . . , im. W.L.O.G. let’s say it’s the heads.
-Then, there is some ij that is a tails (using inhomogeneity), and because of the
-spinning, you could have flipped ij . But you won’t have flipped all the tails,
-because m is odd so the number of tails differs from the number of heads, so
-you will still be in the inhomogeneous state.
+Suppose n = 2<sup>k</sup>, and you have a solution for 2<sup>k-1</sup>. Life would be easy if every pair of opposite coins matched (either both heads or both tails). Then you could think of the matching pairs as single coins, and use the 2<sup>k-1</sup> solution, always flipping a coin with its pair.
+
+For instance, in the n = 4 = 2<sup>2</sup> case, the opposite pairs are \{1, 3\} and \{2, 4\}. The solution for n = 2 = 2<sup>2-1</sup> is (Flip Both, Flip Coin 1, Flip Both). (This isn't hard to figure out, but I'll show below how to lazily use our recursive solution to find it.) If coins 1 and 3 match, and so do 2 and 4, then an adequate solution is (Flip All 4, Flip 1&3, Flip All 4), or in other words the n = 2 solution with 1 and 3 glued together and 2 glued to 4. We'll call this sequence G for glued.
+
+So, the problem is reduced to getting the pairs all matching. This turns out to also be a 2<sup>k-1</sup> spinning table problem! Think of matching pairs as being "heads" and mismatched pairs as being "tails." You can "flip" the pair by flipping one of the coins, as this "flips" whether or not the pair matches. For instance, when n = 4, flipping 1 changes whether 1 and 3 match, and flipping 2 does the same for \{2, 4\}. So, with M standing for "matching," the sequence M=(Flip 1&2, Flip 1, Flip 1&2) will get both pairs matching at some point.
+
+Now we don't know at what point in M all the pairs will be matching, so we have to do the G sequence in between each step of M. Luckily, the G sequence leaves the M game unchanged — every flip in G does the same thing to both members of each pair, so the set of matching pairs remains the same. To wit, if M consists of flips M<sub>1</sub>, M<sub>2</sub>, ..., M<sub>3</sub>, then the 2<sup>k</sup> solution would be (G,M<sub>1</sub>,G,M<sub>2</sub>,G,...,G,M<sub>N</sub>,G). For n = 4 this is exactly the [solution](https://fivethirtyeight.com/features/whats-your-best-scrabble-string/) provided by FiveThirtyEight.
+
+To solve n = 2 = 2<sup>1</sup> recursively, we need an n = 1 = 2<sup>1-1</sup> solution. This is the base case, so sadly we will have to use our own ingenuity. M=(Flip 1) works, which translates to G=(Flip Both). The solution is then (G,M,G)=(Flip Both, Flip 1, Flip Both).
+
+## Growth rate
+
+The growth rate of number of steps is exponential. It's not hard to see that if the solution for n = 2<sup>k</sup> takes N steps, then the solution for n = 2<sup>k+1</sup> takes N(N+2) steps. From this, it can easily be shown the solution for n takes 2<sup>n</sup> - 1 steps.
+
+## Non-powers of 2
+
+n is not a power of 2 if and only if it’s divisible by some odd m > 1. Then there are evenly spaced coins i<sub>1</sub>, i<sub>2</sub>,..., i<sub>m</sub>. There is no solution because if you start in a configuration where i<sub>1</sub>,..., i<sub>m</sub> are not homogeneous (not all heads or all tails), there is no guarantee you will ever escape this state.
+
+To see this, consider a choice of flips. You could luck out and flip exactly the heads or exactly the tails in i<sub>1</sub>,..., i<sub>m</sub>. Without loss of generality let's say it's the heads. Then, there is some i<sub>j</sub> that is a tails (using inhomogeneity), and because of the spinning, you could have made the same flip choice but ended up flipping i<sub>j</sub>. Now you will have remained in the inhomogeneous state — you won't have flipped exactly the tails because you've done the same number of flips, yet since m is odd the number of tails differs from the number of heads.
