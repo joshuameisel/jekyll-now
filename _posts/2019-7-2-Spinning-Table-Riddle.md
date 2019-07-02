@@ -21,8 +21,10 @@ trick that involves playing two smaller games at once. I will demonstrate this,
 and show how FiveThirtyEight’s n=4 solution exactly implements this recursive
 algorithm. I will prove, on the other hand, that there is no solution for any n
 not a power of 2.
-1 Powers of 2
-Suppose n = 2k
+
+## Powers of 2
+
+Suppose $$n = 2^k$$
 , and you have a solution for 2k−1
 . Life would be easy if
 every pair of opposite coins matched (either both heads or both tails). Then
