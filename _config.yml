@@ -1,5 +1,5 @@
 name: Josh Meisel
-description: 
+# description: 
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
 avatar: https://avatars2.githubusercontent.com/u/7259280?s=400&u=594dfcc2a3b143dd2c894d5441927d6d60853d28&v=4
@@ -15,11 +15,11 @@ footer-links:
   facebook: 
   flickr:
   github: 
-  instagram: brunchbetch69
+  instagram: #brunchbetch69
   linkedin: joshua-meisel-665556158
   pinterest:
   rss: # just type anything here for a working RSS icon
-  twitter: artsypriest
+  twitter: #artsypriest
   stackoverflow: # your stackoverflow profile, e.g. "users/50476/bart-kiers"
   youtube: # channel/<your_long_string> or user/<user-name>
   googleplus: # anything in your profile username that comes after plus.google.com/
@@ -69,6 +69,7 @@ sass:
 gems:
   - jekyll-sitemap # Create a sitemap using the official Jekyll sitemap gem
   - jekyll-feed # Create an Atom feed using the official Jekyll feed gem
+  - jemoji
 
 # Exclude these files from your production _site
 exclude:
