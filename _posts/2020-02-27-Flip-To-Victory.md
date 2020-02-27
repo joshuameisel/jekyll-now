@@ -32,3 +32,5 @@ More concretely, say that W<sub>n</sub> is a random walk that moves in the same 
 try again
 
 This $$\subset$$ latex 
+
+or maybe this $\subset$
