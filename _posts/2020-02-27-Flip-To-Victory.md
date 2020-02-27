@@ -42,7 +42,8 @@ or, equivalently, $$P(M_n = k)={n \choose \lfloor \frac{n + k + 1}{2} \rfloor}2^
 So $$p_{100} = 1 - \underset{0 \le 3k \le 100}{\sum}P(M_{100} = 3k)  \approx 0.640$$.
 
 ## Asymptotic Behavior
-You would guess that as $$n \to \infty$$, $$P(M_n \equiv 0 \pmod 3) \to \frac{1}{3}$$, so $$p_n \to \frac{2}{3}$$.  To see this, note that $$P(M_{n} = k)$$ is non-increasing, so $$p_n =$$
+You would guess that as $$n \to \infty$$, $$P(M_n \equiv 0 \pmod 3) \to \frac{1}{3}$$, so $$p_n \to \frac{2}{3}$$.  To see this, note that $$P(M_{n} = k)$$ is non-increasing, so 
+$$p_n =$$
 $$\underset{0 \le 3k \le n}{\sum}P(M_n = $$
 $$3k + 1) + P(M_n = 3k + 2) \le 2\underset{0 \le 3k \le n}{\sum}P(M_n = 3k)  = $$
 $$2(1 - p_n) \implies p_n \le  \frac{2}{3}$$.
