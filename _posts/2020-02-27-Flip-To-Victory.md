@@ -28,7 +28,8 @@ Assuming the above strategy, we start off losing (and betting 2) until we have m
 
 More concretely, say that $$W_n$$ is a random walk that moves in the same direction as our points when have 0 or fewer points, and the opposite direction when we have positive points (to convince yourself this is a proper random walk, note that regardless of the previous path of $$W_n$$, its next move has even odds of being left or right). We can see that we're only losing when $$M_n$$ is a multiple of 3, so our win probability $$p_{100} = P(M_{100} \not\equiv 0 \pmod  3)$$.
 
-There's a very [pretty derivation](https://web.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) of the distribution of $$M_n$$ that  uses a similar reflection trick. It's nearly the distribution of $$|W_n|$$. For $$0 \le k \le n$$, 
+There's a very [pretty derivation](https://web.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) of the distribution of $$M_n$$ that  uses a similar reflection trick. It's nearly the distribution of $$|W_n|$$. For $$0 \le k \le n$$,
+<p>&nbsp;</p>
 $$
 P(M_n = k) = \begin{cases}
     P(W_n = k) & \text{if } n \equiv k \pmod 2\\
@@ -41,7 +42,10 @@ or, equivalently, $$P(M_n = k)={n \choose \lfloor \frac{n + k + 1}{2} \rfloor}2^
 So $$p_{100} = 1 - \underset{0 \le 3k \le 100}{\sum}P(M_{100} = 3k)  \approx 0.640$$.
 
 ## Asymptotic Behavior
-You would guess that as $$n \to \infty$$, $$P(M_n \equiv 0 \pmod 3) \to \frac{1}{3}$$, so $$p_n \to \frac{2}{3}$$.  To see this, note that $$P(M_{n} = k)$$ is non-increasing, so $$p_n =  \underset{0 \le 3k \le n}{\sum}P(M_n = 3k + 1) + P(M_n = 3k + 2) \le 2\underset{0 \le 3k \le n}{\sum}P(M_n = 3k)  = 2(1 - p_n) \implies p_n \le  \frac{2}{3}$$.
+You would guess that as $$n \to \infty$$, $$P(M_n \equiv 0 \pmod 3) \to \frac{1}{3}$$, so $$p_n \to \frac{2}{3}$$.  To see this, note that $$P(M_{n} = k)$$ is non-increasing, so $$p_n =$$
+$$\underset{0 \le 3k \le n}{\sum}P(M_n = $$
+$$3k + 1) + P(M_n = 3k + 2) \le 2\underset{0 \le 3k \le n}{\sum}P(M_n = 3k)  = $$
+$$2(1 - p_n) \implies p_n \le  \frac{2}{3}$$.
 
 Also, $$p_n \ge 2\underset{3 \le 3k \le n}{\sum}P(M_n = 3k + 3) 
 = 2(1 - p_n - P(M_n = 0)) \implies p_n \ge \frac{2(1 - P(M_n = 0))}{3} \to \frac{2}{3}$$.
@@ -74,5 +78,3 @@ $$[1 - P(M_{n} \in \{1, 4, 7, \ldots \})] +  [1 - P(M_{n} \in \{0, 2, 5, 8, \ldo
 $$[1 - P(M_{n} \in \{2, 5, 8, \ldots \})] +  [1 - P(M_{n} \in \{0, 1, 4, 7, \ldots \})]=$$
 
 $$p_{n}(2) + p_{n}(-2)$$
-
-
