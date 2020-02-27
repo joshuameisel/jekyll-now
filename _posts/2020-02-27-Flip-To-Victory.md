@@ -53,9 +53,9 @@ Now say we have $$n+1$$ flips left. Call $$p_n(m)$$ your win probability with m 
 
 For $$m < 0$$, the $$\le$$ becomes an equality and the equality becomes a $$\ge$$. 
 
-Now we need to show equality for $$m = 0, 1$$ (which if you didn't notice, we used in the above). Let's use $$W_n$$ again, but now if we don't start with 0 points, it changes which values of $$M_n$$ correspond to losses. When $$m > 0$$, we aren't in the red until $$M_n = m$$, and again at $$m + 3, m + 6, \ldots$$ For even $$m \le 0$$, we are losing for $$0 \le M_n \le \frac{|m|}{2}$$and then every third $$M_n$$ after that. For odd $$m < 0$$, we are losing for $$0 \le M_n \le \frac{|m| - 1}{2}$$, but now we landed on 1 instead of 2, so we are losing again at $$2 + \frac{|m| -1}{2}$$, and then finally every third after that. So, checking $$m=1$$:
+Now we need to show equality for $$m = 0, 1$$ (which if you didn't notice, we used in the above). Let's use $$W_n$$ again, but now if we don't start with 0 points, it changes which values of $$M_n$$ correspond to losses. When $$m > 0$$, we aren't in the red until $$M_n = m$$, and again at $$m + 3, m + 6, \ldots$$ For even $$m \le 0$$, we are losing for $$0 \le M_n \le \frac{-m}{2}$$and then every third $$M_n$$ after that. For odd $$m < 0$$, we are losing for $$0 \le M_n \le \frac{-m - 1}{2}$$, but now we landed on 1 instead of 2, so we are losing again at $$2 + \frac{-m -1}{2}$$, and then finally every third after that. So, checking $$m=1$$:
 
-<!-- $$p_{n}(2) + p_{n}(0) =$$
+$$p_{n}(2) + p_{n}(0) =$$
 
 $$[1 - P(M_{n} \in \{2, 5, 8, \ldots \})] +  [1 - P(M_{n} \in \{0, 3, 6, \ldots \})]=$$
 
@@ -73,6 +73,6 @@ $$[1 - P(M_{n} \in \{1, 4, 7, \ldots \})] +  [1 - P(M_{n} \in \{0, 2, 5, 8, \ldo
 
 $$[1 - P(M_{n} \in \{2, 5, 8, \ldots \})] +  [1 - P(M_{n} \in \{0, 1, 4, 7, \ldots \})]=$$
 
-$$p_{n}(2) + p_{n}(-2)$$ -->
+$$p_{n}(2) + p_{n}(-2)$$
 
 
