@@ -3,8 +3,6 @@ layout: post
 title: Can You Flip Your Way To Victory?
 ---
 
-{% include lib/mathjax.html %}
-
 FiveThirtyEight posted this
 [probability riddle](https://fivethirtyeight.com/features/can-you-flip-your-way-to-victory/):
 
