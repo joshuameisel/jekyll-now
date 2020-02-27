@@ -48,7 +48,7 @@ $$3k + 1) + P(M_n = 3k + 2) \le 2\underset{0 \le 3k \le n}{\sum}P(M_n = 3k)  = $
 $$2(1 - p_n) \implies p_n \le  \frac{2}{3}$$.
 
 Also, $$p_n \ge $$
-$$2\underset{3 \le 3k \le n}{\sum}P(M_n = 3k + 3) = $$
+$$2\underset{0 \le 3k \le n}{\sum}P(M_n = 3k + 3) = $$
 $$2(1 - p_n - P(M_n = 0)) \implies p_n \ge \frac{2(1 - P(M_n = 0))}{3} \to \frac{2}{3}$$.
 
 ## Proof of Winning Strategy
