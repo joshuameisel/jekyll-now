@@ -56,7 +56,7 @@ Now I'll show inductively that betting 1 if and only if you're ahead is a winnin
 
 Now say we have $$n+1$$ flips left. Call $$p_n(m)$$ your win probability with m points and n flips left. With m points we should bet 2 if $$\frac{1}{2}(p_{n}(m+1) + p_{n}(m-1)) < \frac{1}{2}(p_{n}(m+2) + p_{n}(m-2))$$, bet 1 if the inequality is reversed, and in the case of equality, either is a winning strategy. For $$m > 1$$:
 $$p_{n}(m+1) + p_{n}(m-1) \ge $$
-$$\frac{1}{2}(p_{n}(m+3) + p_{n}(m-1)) + \frac{1}{2}(p_{n}(m+1) + p_{n}(m-3)) =$$
+$$\frac{1}{2}(p_{n-1}(m+3) + p_{n-1}(m-1)) + \frac{1}{2}(p_{n-1}(m+1) + p_{n-1}(m-3)) =$$
 $$p_{n}(m+2) + p_{n}(m-2)$$
 
 For $$m < 0$$, the $$\ge$$ becomes an equality and the equality becomes a $$\le$$. 
