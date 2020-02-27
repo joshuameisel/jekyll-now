@@ -28,10 +28,14 @@ Assuming the above strategy, we start off losing (and betting 2) until we have m
 
 More concretely, say that $$W_n$$ is a random walk that moves in the same direction as our points when have 0 or fewer points, and the opposite direction when we have positive points (to convince yourself this is a proper random walk, note that regardless of the previous path of $$W_n$$, its next move has even odds of being left or right). We can see that we're only losing when $$M_n$$ is a multiple of 3, so our win probability $$p_{100} = P(M_{100} \not\equiv 0 \pmod  3)$$.
 
-There's a very [pretty derivation](https://web.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) of the distribution of $$M_n$$ that  uses a similar reflection trick. It's nearly the distribution of $$|W_n|$$. For $$0 \le k \le n$$, $$P(M_n = k) = \begin{cases}
+There's a very [pretty derivation](https://web.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) of the distribution of $$M_n$$ that  uses a similar reflection trick. It's nearly the distribution of $$|W_n|$$. For $$0 \le k \le n$$, 
+$$
+P(M_n = k) = \begin{cases}
     P(W_n = k) & \text{if } n \equiv k \pmod 2\\
     P(W_n = k+1) ,              & \text{otherwise}
-\end{cases} $$ or, equivalently, $$P(M_n = k)={n \choose \lfloor \frac{n + k + 1}{2} \rfloor}2^{-n}$$.
+\end{cases} 
+$$ 
+or, equivalently, $$P(M_n = k)={n \choose \lfloor \frac{n + k + 1}{2} \rfloor}2^{-n}$$.
 
 So $$p_{100} = 1 - \underset{0 \le 3k \le 100}{\sum}P(M_{100} = 3k)  \approx 0.640$$.
 
