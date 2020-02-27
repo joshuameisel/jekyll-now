@@ -17,7 +17,7 @@ FiveThirtyEight posed this
 
 Somewhat improbably, the answer is the same as Prob($$M_{100}$$ is not a multiple of 3), where $$M_n$$ is the running maximum of a simple symmetric random walk! (A simple symmetric random walk is the process starting at 0 whereby after each step in time you move either left or right by 1 with equal probability.)
 
-## Bet Big When You're Down
+## Pulling the Goalie
 
 My first instinct was that you should bet big when you're losing, maximizing the probability of regaining your losses, and bet small when you're up, minimizing the probability of going in the hole again. I wasn't able to find a simple proof for this (let me know if you do!), but will demonstrate it later inductively using some fancy random walk mumbo jumbo I derive first.
 
@@ -25,7 +25,7 @@ My first instinct was that you should bet big when you're losing, maximizing the
 
 Assuming the above strategy, we start off losing (and betting 2) until we have more heads than tails. Informally, this takes as long as a random walk $$W_n$$  takes to hit 1 for the first time, or for its maximum $$M_n$$ to reach 1. At this point we'll be up two points, start betting 1, and be winning until we end up back at 0. This is like $$W_n$$ going from 1 to -1, or considering its reflection across 1 over this time period, going from 1 to 3 and having $$M_n$$ reach 3.
 
-Formally, say that $$W_n$$ is a random walk that moves in the same direction as our points when have 0 or fewer points, and the opposite direction when we have positive points (to convince yourself this is a proper random walk, note that regardless of the previous path of $$W_n$$, its next move has even odds of being left or right). We can see that we're only losing when $$M_n$$ is a multiple of 3, so our win probability $$p_{100} = P(M_{100} \not\equiv 0 \pmod  3)$$.
+Formally, say that $$W_n$$ is a random walk that moves in the same direction as our points when we have 0 or fewer points, and the opposite direction when we have positive points (to convince yourself this is a proper random walk, note that regardless of the previous path of $$W_n$$, its next move has even odds of being left or right). We can see that we're only losing when $$M_n$$ is a multiple of 3, so our win probability $$p_{100} = P(M_{100} \not\equiv 0 \pmod  3)$$.
 
 There's a very [pretty derivation](https://web.ma.utexas.edu/users/gordanz/notes/lecture4.pdf) of the distribution of $$M_n$$ that  uses a similar reflection trick. It's nearly the distribution of $$|W_n|$$. For $$0 \le k \le n$$,
 <p>&nbsp;</p>
