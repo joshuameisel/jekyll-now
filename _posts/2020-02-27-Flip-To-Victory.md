@@ -25,6 +25,6 @@ My first insight was that you should probably bet big when you're losing, maximi
 
 Assuming the above strategy, notice that we're losing (and betting 2) until we have more heads than tails (this takes as long as a random walk W<sub>n</sub> takes to hit 1 for the first time, or for its maximum M<sub>n</sub> to hit 1). At this point we'll be up two points, start betting 1, and winning until we end up back at 0. This is like W<sub>n</sub> going from 1 to -1, or considering its reflection over this time period, going from 1 to 3 and having M<sub>n</sub> hit 3).
 
-More concretely, say that W<sub>n</sub> is a random walk that moves in the same direction as our money pot when we're losing, and the opposite direction when we're winning (to convince yourself this is a proper random walk, note that regardless of the previous path of W<sub>n</sub>, it still has 1/2 odds of moving left or right). We can see that we're only losing when M<sub>n</sub> is a multiple of 3, so our win probability equals Prob(M<sub>100</sub> != 0 (mod 3)).
+More concretely, say that W<sub>n</sub> is a random walk that moves in the same direction as our money pot when we're losing, and the opposite direction when we're winning (to convince yourself this is a proper random walk, note that regardless of the previous path of W<sub>n</sub>, it still has 1/2 odds of moving left or right). We can see that we're only losing when M<sub>n</sub> is a multiple of 3, so our win probability equals Prob(M<sub>100</sub> is not multiple of 3).
 
-This $$\subset$$
+This $$\subset$$ latex
