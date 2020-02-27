@@ -47,13 +47,17 @@ $$\underset{0 \le 3k \le n}{\sum}P(M_n = $$
 $$3k + 1) + P(M_n = 3k + 2) \le 2\underset{0 \le 3k \le n}{\sum}P(M_n = 3k)  = $$
 $$2(1 - p_n) \implies p_n \le  \frac{2}{3}$$.
 
-Also, $$p_n \ge 2\underset{3 \le 3k \le n}{\sum}P(M_n = 3k + 3) 
-= 2(1 - p_n - P(M_n = 0)) \implies p_n \ge \frac{2(1 - P(M_n = 0))}{3} \to \frac{2}{3}$$.
+Also, $$p_n \ge $$
+$$2\underset{3 \le 3k \le n}{\sum}P(M_n = 3k + 3) = $$
+$$2(1 - p_n - P(M_n = 0)) \implies p_n \ge \frac{2(1 - P(M_n = 0))}{3} \to \frac{2}{3}$$.
 
 ## Proof of Winning Strategy
 Now I'll show inductively that betting 1 if and only if you're ahead is a winning strategy, and that it doesn't matter what you bet when you have 0 or 1 points. When there's only one flip left, your strategy only matters if you're up 2 or down 1, and the strategy works. 
 
-Now say we have $$n+1$$ flips left. Call $$p_n(m)$$ your win probability with m points and n flips left. With m points we should bet 2 if $$\frac{1}{2}(p_{n}(m+1) + p_{n}(m-1)) < \frac{1}{2}(p_{n}(m+2) + p_{n}(m-2))$$, bet 1 if the inequality is reversed, and in the case of equality, either is a winning strategy. For $$m > 1$$, $$p_{n}(m+1) + p_{n}(m-1) \ge \frac{1}{2}(p_{n}(m+3) + p_{n}(m-1)) + \frac{1}{2}(p_{n}(m+1) + p_{n}(m-3)) =p_{n}(m+2) + p_{n}(m-2)$$
+Now say we have $$n+1$$ flips left. Call $$p_n(m)$$ your win probability with m points and n flips left. With m points we should bet 2 if $$\frac{1}{2}(p_{n}(m+1) + p_{n}(m-1)) < \frac{1}{2}(p_{n}(m+2) + p_{n}(m-2))$$, bet 1 if the inequality is reversed, and in the case of equality, either is a winning strategy. For $$m > 1$$:
+$$p_{n}(m+1) + p_{n}(m-1) \ge $$
+$$\frac{1}{2}(p_{n}(m+3) + p_{n}(m-1)) + \frac{1}{2}(p_{n}(m+1) + p_{n}(m-3)) =$$
+$$p_{n}(m+2) + p_{n}(m-2)$$
 
 For $$m < 0$$, the $$\le$$ becomes an equality and the equality becomes a $$\ge$$. 
 
