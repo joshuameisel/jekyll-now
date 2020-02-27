@@ -3,6 +3,8 @@ layout: post
 title: Can You Flip Your Way To Victory?
 ---
 
+{% include lib/mathjax.html %}
+
 FiveThirtyEight posted this
 [probability riddle](https://fivethirtyeight.com/features/can-you-flip-your-way-to-victory/):
 
@@ -27,4 +29,6 @@ Assuming the above strategy, notice that we're losing (and betting 2) until we h
 
 More concretely, say that W<sub>n</sub> is a random walk that moves in the same direction as our money pot when we're losing, and the opposite direction when we're winning (to convince yourself this is a proper random walk, note that regardless of the previous path of W<sub>n</sub>, it still has 1/2 odds of moving left or right). We can see that we're only losing when M<sub>n</sub> is a multiple of 3, so our win probability equals Prob(M<sub>100</sub> is not multiple of 3).
 
-This $$\subset$$ latex
+try again
+
+This $$\subset$$ latex 
