@@ -35,7 +35,7 @@ P(M_n = k) = \begin{cases}
     P(W_n = k+1) ,              & \text{otherwise}
 \end{cases} 
 $$ 
-
+<p>&nbsp;</p>
 or, equivalently, $$P(M_n = k)={n \choose \lfloor \frac{n + k + 1}{2} \rfloor}2^{-n}$$.
 
 So $$p_{100} = 1 - \underset{0 \le 3k \le 100}{\sum}P(M_{100} = 3k)  \approx 0.640$$.
