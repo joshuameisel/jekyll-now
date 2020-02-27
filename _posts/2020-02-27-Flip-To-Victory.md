@@ -16,7 +16,7 @@ FiveThirtyEight posted this
 >
 >_Extra credit:_  What if coin A isn’t fair (but coin B is still fair)? That is, if coin A comes up heads with probability  _p_  and you optimize your strategy, what percentage of games will you win?
 
-Somewhat improbably, the answer is the same as Prob($M_{100}$ is not a multiple of 3), where $$M_n$$ is the running maximum of a simple symmetric random walk! (A simple symmetric random walk is the process starting at 0 whereby after each step in time you move either left or right by 1 with equal probability.)
+Somewhat improbably, the answer is the same as Prob($$M_{100}$$ is not a multiple of 3), where $$M_n$$ is the running maximum of a simple symmetric random walk! (A simple symmetric random walk is the process starting at 0 whereby after each step in time you move either left or right by 1 with equal probability.)
 
 ## Bet Big When You're Down
 
@@ -35,6 +35,7 @@ P(M_n = k) = \begin{cases}
     P(W_n = k+1) ,              & \text{otherwise}
 \end{cases} 
 $$ 
+
 or, equivalently, $$P(M_n = k)={n \choose \lfloor \frac{n + k + 1}{2} \rfloor}2^{-n}$$.
 
 So $$p_{100} = 1 - \underset{0 \le 3k \le 100}{\sum}P(M_{100} = 3k)  \approx 0.640$$.
