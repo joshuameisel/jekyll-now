@@ -1,10 +1,9 @@
-
 ---
 layout: post
 title: Can You Flip Your Way To Victory?
 ---
 
-FiveThirtyEight posted this
+FiveThirtyEight posed this
 [probability riddle](https://fivethirtyeight.com/features/can-you-flip-your-way-to-victory/):
 
 
