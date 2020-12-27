@@ -9,7 +9,7 @@ Another [probability riddle](https://fivethirtyeight.com/features/can-you-catch-
 
 # Solution
 
-This question boils down to finding the mean of a [linear birth process](http://www.damtp.cam.ac.uk/user/st321/CV_&_Publications_files/STpapers-pdf/BDP.pdf), which models population growth — très à la mode! Every derivation I found for the distribution of this process was fairly messy, while the formula for the distribution $$$$\mathbb{P}(k\text{ spams after t days}) = \mathbb{P}(S_t=k)=(1 - e^{-t})^ke^{-t}$$$$ begs an intuitive explanation connecting it to the geometric distribution. So I decided to find it myself!
+This question boils down to finding the mean of a [linear birth process](http://www.damtp.cam.ac.uk/user/st321/CV_&_Publications_files/STpapers-pdf/BDP.pdf), which models population growth — très à la mode! Every derivation I found for the distribution of this process was fairly messy, while the formula for the distribution $$\mathbb{P}(k\text{ spams after t days}) = \mathbb{P}(S_t=k)=(1 - e^{-t})^ke^{-t}$$ begs an intuitive explanation connecting it to the geometric distribution. So I decided to find it myself!
 
 # Description of the Linear Birth Process
 
