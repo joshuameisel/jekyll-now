@@ -23,9 +23,9 @@ The main trick is to connect the linear birth process to the linear death proces
 
 When $$D^k=j$$ the death rate is j, since there are $$j$$ spams dying. Meanwhile, when $$S=j-1$$ the birth rate is $$j$$ (there are $$j - 1$$ spams plus the original post). So the time it takes $$D^k$$ to go from $$j$$ to $$j-1$$ has the same distribution as the time it takes $$S$$ to go from $$j - 1$$ to $$j$$. Based on their starting points then, the extinction time of $$D^k$$ has the same distribution as the time of the $$k^{th}$$ birth of $$S$$. In fact, running $$S + 1$$ (the population of spams plus the post) until the $$k^{th}$$ birth is essentially the reverse of $$D^k$$, with the exception that $$S + 1$$ will be one bigger than $$D^k$$ at the jumps since a birth just occurred instead of a death.
 
-$$D^k$$ will go extinct by time t, i.e. $$D^k_t=0$$, if all $$k$$ spams die before $$t$$ days. If we think of $$f_j$$ as a coin that's heads when the $$j^{th}$$ spam lives longer than $$t$$ days, this is like having $$f_j=T$$ for $$1 \le j \le k$$. Then
+$$D^k$$ will go extinct by time t, i.e. $$D^k_t=0$$, if all $$k$$ spams die before $$t$$ days. If we think of $$f_j$$ as a coin that's heads when the $$j^{th}$$ spam lives longer than $$t$$ days, this is like having $$f_j=T$$ for $$1 \le j \le k$$. Then $$\mathbb{P}(S_t = k)$$
 
-$$\mathbb{P}(S_t = k) &= \mathbb{P}(S_t \ge k) - \mathbb{P}(S_t \ge k + 1)$$
+$$ = \mathbb{P}(S_t \ge k) - \mathbb{P}(S_t \ge k + 1)$$
 $$= \mathbb{P}(D^k_t = 0) - \mathbb{P}(D^{k+1}_t = 0)$$
 $$= P(f_1, \ldots, f_k = T) - P(f_1, \ldots, f_{k+1}=T)$$
 $$= P(f_1, \ldots, f_k = T, f_{k+1}= H)$$
